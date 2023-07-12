@@ -5,6 +5,9 @@ export default {
     extend: {
       colors: {
         moonstone: "#01A7C2",
+        palette11: "#79E0EE",
+        palette12: "#D0F5BE",
+        palette13: "#FBFFDC",
       },
     },
   },

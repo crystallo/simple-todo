@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTodo } from "../hooks/useTodo";
 import toast from "react-hot-toast";
+import AddIcon from "@mui/icons-material/Add";
 
 export const AddTodo = () => {
   const [input, setInput] = useState<string>("");
@@ -26,20 +27,20 @@ export const AddTodo = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex items-center w-full gap-2 p-5">
+      <div className="flex items-center w-full gap-2">
         <input
           ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="what do i need to do ..."
-          className="w-full px-3 py-2 bg-white border rounded-md outline-none border-slate-200 focus:border focus:border-slate-300 focus:shadow-md"
+          className="w-full px-3 py-2 text-sm bg-white border border-white rounded-full outline-none grow backdrop-blur bg-opacity-80 backdrop-filter focus:border focus:border-slate-300"
         />
         <button
           type="submit"
-          className="px-3 py-2 transition duration-300 border rounded-md border-slate-200 active:scale-95 hover:bg-sky-200"
+          className="p-2 transition duration-300 bg-white border border-transparent rounded-full active:scale-95 hover:bg-palette11"
         >
-          Add
+          <AddIcon />
         </button>
       </div>
     </form>
