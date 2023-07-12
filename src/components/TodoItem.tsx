@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import cn from "classnames";
 import { useEffect, useRef, useState } from "react";
-import { useTodo } from "../hooks/useTodo";
+import useTodo from "../hooks/useTodo";
 import toast from "react-hot-toast";
 
 interface TodoItemProps {

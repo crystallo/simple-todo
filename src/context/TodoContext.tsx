@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { createContext, useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 interface TodoContextProps {
   todos: Todo[];
@@ -14,7 +15,7 @@ export const TodoContext = createContext<TodoContextProps | undefined>(
 );
 
 export const TodoProvider = (props: { children: React.ReactNode }) => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {
@@ -22,7 +23,7 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
       text,
       status: "undone",
     };
-    setTodos((prevTodos) => [...prevTodos, newTodo]);
+    setTodos((prevTodos: Todo[]): Todo[] => [...prevTodos, newTodo]);
   };
 
   const deleteTodo = (id: string) => {

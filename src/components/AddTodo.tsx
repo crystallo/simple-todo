@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useTodo } from "../hooks/useTodo";
+import useTodo from "../hooks/useTodo";
 import toast from "react-hot-toast";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -34,11 +34,11 @@ export const AddTodo = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="what do i need to do ..."
-          className="w-full px-3 py-2 text-sm bg-white border border-white rounded-full outline-none grow backdrop-blur bg-opacity-80 backdrop-filter focus:border focus:border-slate-300"
+          className="w-full px-3 py-2 text-sm transition duration-300 bg-white border border-white rounded-full outline-none grow backdrop-blur bg-opacity-80 focus:border focus:border-slate-300 focus:shadow-sm"
         />
         <button
           type="submit"
-          className="p-2 transition duration-300 bg-white border border-transparent rounded-full active:scale-95 hover:bg-palette11"
+          className="p-2 transition duration-300 bg-white border border-transparent rounded-full active:scale-90 hover:bg-palette11 backdrop-blur bg-opacity-80 focus:shadow-sm"
         >
           <AddIcon />
         </button>

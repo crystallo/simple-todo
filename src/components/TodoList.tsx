@@ -1,4 +1,4 @@
-import { useTodo } from "../hooks/useTodo";
+import useTodo from "../hooks/useTodo";
 import { TodoItem } from "./TodoItem";
 import { motion } from "framer-motion";
 

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 
-export const useTodo = () => {
+export default function useTodo() {
   const context = useContext(TodoContext);
 
   if (!context) {
@@ -9,4 +9,4 @@ export const useTodo = () => {
   }
 
   return context;
-};
+}
