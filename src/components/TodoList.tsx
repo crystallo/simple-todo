@@ -6,16 +6,16 @@ export const TodoList = () => {
   const { todos } = useTodo();
 
   return (
-    <div className="overflow-y-auto ">
+    <section className="w-full p-8 overflow-y-auto text-center no-scrollbar">
       {todos.length == 0 ? (
         <p> There's nothing to do! ☁️</p>
       ) : (
-        <motion.ul className="grid max-w-lg gap-2 px-5 m-auto">
+        <motion.ul className="grid gap-4 max-w">
           {todos.map((todo) => (
             <TodoItem todo={todo} key={todo.id} />
           ))}
         </motion.ul>
       )}
-    </div>
+    </section>
   );
 };

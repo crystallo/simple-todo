@@ -3,6 +3,7 @@ import cn from "classnames";
 import { useEffect, useRef, useState } from "react";
 import useTodo from "../hooks/useTodo";
 import toast from "react-hot-toast";
+import Input from "./Input";
 
 interface TodoItemProps {
   todo: Todo;
@@ -56,20 +57,20 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
       layout
       key={todo.id}
       className={cn(
-        "p-5 rounded-lg bg-slate-100",
-        todo.status === "done" && "bg-opacity-50 text-zinc-500"
+        "p-4 rounded-2xl bg-slate-100/80",
+        todo.status === "done" && "bg-opacity-20 text-zinc-500"
       )}
     >
       {editingTodoId === todo.id ? (
         <motion.div layout className="flex gap-2">
-          <input
+          <Input
             ref={editInputRef}
             type="text"
             value={editingTodoText}
             onChange={(e) => setEditingTodoText(e.target.value)}
           />
           <button
-            className="px-5 py-2 text-sm font-normal text-orange-300 bg-orange-900 border-2 border-orange-900 active:scale-95 rounded-xl"
+            className="px-5 py-2 text-sm font-normal bg-white active:scale-80 rounded-xl"
             onClick={() => handleUpdate(todo.id)}
           >
             Update

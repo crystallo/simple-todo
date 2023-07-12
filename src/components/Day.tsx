@@ -19,7 +19,7 @@ export const Day = () => {
   const date = getTodayDate();
 
   return (
-    <div className="flex flex-col items-center rounded-lg">
+    <div className="flex flex-col items-center mt-16 rounded-lg">
       <h1 className="text-2xl font-semibold uppercase">{date.day}</h1>
       <div className="text-lg font-medium text-slate-500">
         {date.month} {date.date}
