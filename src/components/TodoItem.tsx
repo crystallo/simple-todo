@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import useTodo from "../hooks/useTodo";
 import toast from "react-hot-toast";
 import Input from "./Input";
+import {
+  Check,
+  CheckCircle,
+  CheckCircleOutline,
+  Delete,
+  Edit,
+} from "@mui/icons-material";
 
 interface TodoItemProps {
   todo: Todo;
@@ -70,50 +77,43 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
             onChange={(e) => setEditingTodoText(e.target.value)}
           />
           <button
-            className="px-5 py-2 text-sm font-normal bg-white active:scale-80 rounded-xl"
+            className="p-2 bg-white rounded-full active:scale-80"
             onClick={() => handleUpdate(todo.id)}
           >
-            Update
+            <Check fontSize="small" />
           </button>
         </motion.div>
       ) : (
-        <div className="flex flex-col gap-5">
+        <div className="flex gap-2">
+          <button onClick={() => handleStatusUpdate(todo.id)}>
+            {todo.status === "undone" ? (
+              <CheckCircleOutline fontSize="small" />
+            ) : (
+              <CheckCircle fontSize="small" />
+            )}
+          </button>
           <motion.span
             layout
             style={{
               textDecoration: todo.status === "done" ? "line-through" : "none",
             }}
+            className="w-full"
           >
             {todo.text}
           </motion.span>
           <div className="flex justify-between gap-5 text-white">
-            <button onClick={() => handleStatusUpdate(todo.id)}>
-              {todo.status === "undone" ? (
-                <span className="flex items-center gap-1">
-                  {/* <BsCheck2Square /> */}
-                  Mark Completed
-                </span>
-              ) : (
-                <span className="flex items-center gap-1">
-                  {/* <TbRefresh /> */}
-                  Mark Undone
-                </span>
-              )}
-            </button>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => handleEdit(todo.id, todo.text)}
                 className="flex items-center gap-1 "
               >
-                {/* <FaRegEdit /> */}
-                Edit
+                <Edit />
               </button>
               <button
                 onClick={() => handleDelete(todo.id)}
                 className="flex items-center gap-1 text-red-500"
               >
-                {/* <RiDeleteBin7Line /> */}
-                Delete
+                <Delete />
               </button>
             </div>
           </div>
