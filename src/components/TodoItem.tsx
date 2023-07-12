@@ -64,7 +64,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
       layout
       key={todo.id}
       className={cn(
-        "p-4 rounded-2xl bg-slate-100/80",
+        "p-4 rounded-2xl bg-slate-100/80 scale-hover",
         todo.status === "done" && "bg-opacity-20 text-zinc-500"
       )}
     >

@@ -20,6 +20,16 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .scale-hover:hover {
+    background-image: linear-gradient(to left, #89e4f0, #fbffdc) !important ;
+    transform: scale(1.02) !important;
+    /* color: white !important; */
+  }
+
+  .scale-hover {
+    transition: 200ms ease-in !important;
+  }
 }
 
 :root {
