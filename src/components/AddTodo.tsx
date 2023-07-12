@@ -37,6 +37,7 @@ export const AddTodo = () => {
           placeholder="what do i need to do ..."
         />
         <button
+          aria-label="add task"
           type="submit"
           className="p-2 transition duration-300 bg-white border border-transparent rounded-full active:scale-90 hover:bg-palette11 backdrop-blur bg-opacity-80 focus:shadow-sm"
         >

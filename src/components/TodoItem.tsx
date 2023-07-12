@@ -64,7 +64,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
       layout
       key={todo.id}
       className={cn(
-        "p-4 rounded-2xl bg-slate-100/80 scale-hover",
+        "p-4 rounded-2xl bg-slate-100/80 scale-hover animate-fade-in-up",
         todo.status === "done" && "bg-opacity-20 text-zinc-500"
       )}
     >
@@ -85,7 +85,10 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
         </motion.div>
       ) : (
         <div className="flex gap-2">
-          <button onClick={() => handleStatusUpdate(todo.id)}>
+          <button
+            aria-label="update task's status"
+            onClick={() => handleStatusUpdate(todo.id)}
+          >
             {todo.status === "undone" ? (
               <CheckCircleOutline fontSize="small" />
             ) : (
@@ -104,12 +107,14 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
           <div className="flex justify-between gap-5 text-white">
             <div className="flex items-center gap-2">
               <button
+                aria-label="edit task"
                 onClick={() => handleEdit(todo.id, todo.text)}
                 className="flex items-center gap-1 "
               >
                 <Edit />
               </button>
               <button
+                aria-label="delete task"
                 onClick={() => handleDelete(todo.id)}
                 className="flex items-center gap-1 text-red-500"
               >
