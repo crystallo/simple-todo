@@ -18,3 +18,4 @@ I want to:
   - Dark mode
   - Different color palettes
 - Some UI design stuff, make it prettier (not the code formatter, ba dum tss) ... need to learn about more this.
+- If I am ambitious enough, add a database and users
