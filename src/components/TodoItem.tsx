@@ -77,7 +77,7 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
             onChange={(e) => setEditingTodoText(e.target.value)}
           />
           <button
-            className="p-2 bg-white rounded-full active:scale-80"
+            className="rounded-full bg-white p-2"
             onClick={() => handleUpdate(todo.id)}
           >
             <Check fontSize="small" />

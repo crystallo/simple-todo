@@ -1,14 +1,20 @@
 import { InputHTMLAttributes, forwardRef } from "react";
+import cn from "classnames";
 
-export default forwardRef<
+const Input = forwardRef<
   HTMLInputElement,
   InputHTMLAttributes<HTMLInputElement>
->(function Input({ className, ...rest }, ref) {
+>(({ className, ...rest }, ref) => {
   return (
     <input
       {...rest}
       ref={ref}
-      className="w-full px-3 py-2 text-sm transition duration-300 bg-white border border-white rounded-full outline-none grow backdrop-blur bg-opacity-80 focus:border focus:border-slate-400 focus:shadow-sm hover:border hover:border-slate-300 hover:shadow-sm"
+      className={cn(
+        "w-full px-3 py-2 text-sm transition duration-300 border border-white rounded-full outline-none bg-white/80 grow backdrop-blur focus:border focus:border-slate-400 focus:shadow-sm hover:border hover:border-slate-300 hover:shadow-sm",
+        className
+      )}
     />
   );
 });
+
+export default Input;

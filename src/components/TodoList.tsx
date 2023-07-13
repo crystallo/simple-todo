@@ -6,11 +6,11 @@ export const TodoList = () => {
   const { todos } = useTodo();
 
   return (
-    <section className="w-full p-8 overflow-y-auto no-scrollbar">
+    <section className="no-scrollbar w-full overflow-y-auto p-8">
       {todos.length == 0 ? (
         <p className="text-center ">There's nothing to do! ☁️</p>
       ) : (
-        <motion.ul className="grid gap-4 max-w">
+        <motion.ul className="grid gap-4">
           {todos.map((todo) => (
             <TodoItem todo={todo} key={todo.id} />
           ))}

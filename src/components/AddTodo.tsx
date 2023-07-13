@@ -28,7 +28,7 @@ export const AddTodo = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex items-center w-full gap-2">
+      <div className="flex w-full items-center gap-2">
         <Input
           ref={inputRef}
           type="text"
@@ -39,7 +39,7 @@ export const AddTodo = () => {
         <button
           aria-label="add task"
           type="submit"
-          className="p-2 transition duration-300 bg-white border border-transparent rounded-full active:scale-90 hover:bg-palette11 backdrop-blur bg-opacity-80 focus:shadow-sm"
+          className="rounded-full border border-transparent bg-white/80 p-2 backdrop-blur transition duration-300 hover:bg-palette11 focus:shadow-sm active:scale-90"
         >
           <AddIcon />
         </button>
