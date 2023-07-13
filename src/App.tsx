@@ -4,7 +4,7 @@ import { TodoCard } from "./components/TodoCard";
 
 function App() {
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-center bg-gray-100">
+    <main className="flex flex-col items-center justify-center w-screen h-screen p-8 bg-gray-100">
       <Toaster />
       <TodoCard />
     </main>
